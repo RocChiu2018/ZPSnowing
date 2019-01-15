@@ -36,7 +36,8 @@ static CGFloat snowflakeY = 0;  //雪花的Y值
     
     /**
      NSTimer类很少用于绘图，因为调用的优先级比较低，在设定的时间内并不会准时被调用；
-     在绘图中一般用CADisplayLink类来作为定时器使用，CADisplayLink类在每次屏幕刷新的时候都会被调用，屏幕一般一秒刷新60次，故而CADisplayLink类一秒会被调用60次。
+     在绘图中一般用CADisplayLink类来作为定时器使用，CADisplayLink类在每次屏幕刷新的时候都会被调用，屏幕一般一秒刷新60次，故而CADisplayLink类一秒会被调用60次；
+     一般情况下，刷新的比较快的时候用CADisplayLink类，刷新的比较慢的情况用NSTimer类。
      */
     CADisplayLink *link = [CADisplayLink displayLinkWithTarget:self selector:@selector(moveSnowflake)];
     
